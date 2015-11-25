@@ -19,5 +19,7 @@ public class Dome1 {
 		}
 		System.out.println(socre);
 		System.out.println(count);
+		System.out.println(count);
+		System.out.println(count);
 	}
 }
