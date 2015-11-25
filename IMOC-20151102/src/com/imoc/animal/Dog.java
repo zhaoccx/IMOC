@@ -5,4 +5,9 @@ public class Dog extends Animal {
 	public void eat() {
 		System.err.println("sssssssssssssssssssss");
 	}
+
+	public Dog() {
+		System.out.println("Dog is init");
+		System.out.println(man);
+	}
 }
