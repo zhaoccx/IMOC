@@ -1,21 +1,23 @@
 package com.imooc.collection;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
- * 课程类
+ * 学生类
  * 
  * @author Administrator
  *
  */
-public class Course {
-	public String	id;
-	public String	name;
+public class Student implements Comparable<Student> {
+	public String		id;
+	public String		name;
+	public Set<Course>	courses;
 
-	public Course(String id, String name) {
+	public Student(String id, String name) {
 		this.id = id;
 		this.name = name;
-	}
-
-	public Course() {
+		this.courses = new HashSet<Course>();
 	}
 
 	@Override
@@ -32,14 +34,21 @@ public class Course {
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof Course))
+		if (!(obj instanceof Student))
 			return false;
-		Course other = (Course) obj;
+		Student other = (Student) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	// @Override
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return this.id.compareTo(o.id);
 	}
 }
