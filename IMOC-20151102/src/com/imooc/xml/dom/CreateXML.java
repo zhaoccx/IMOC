@@ -39,23 +39,44 @@ public class CreateXML {
 		document.setXmlStandalone(true);
 		Element bookstore = document.createElement("bookStore");
 		// 向bookstore根节点中添加子节点book
-		Element book = document.createElement("book");
-		Element name = document.createElement("name");
-		// name.setNodeValue("小王子");
-		name.setTextContent("小王子");
-		book.appendChild(name);
-		book.setAttribute("id", "1");
-		// 将book节点添加到bookstore根节点中
-		bookstore.appendChild(book);
-		// 将bookstore节点（已经包含了book）添加到dom树中
 		document.appendChild(bookstore);
+		Element book = document.createElement("book");
+		book.setAttribute("id", "1");
+		bookstore.appendChild(book);
+		Element name = document.createElement("name");
+		book.appendChild(name);
+		name.setTextContent("小王子");
+		Element year = document.createElement("year");
+		book.appendChild(year);
+		year.setTextContent("2015");
+		Element age = document.createElement("age");
+		age.setTextContent(45 + "");
+		book.appendChild(age);
+		Element address = document.createElement("address");
+		address.setTextContent("深圳市宝安区");
+		book.appendChild(address);
+		Element book2 = document.createElement("book");
+		book2.setAttribute("id", "2");
+		bookstore.appendChild(book2);
+		Element name2 = document.createElement("name");
+		book2.appendChild(name2);
+		name2.setTextContent("小王子");
+		Element year2 = document.createElement("year");
+		book2.appendChild(year2);
+		year2.setTextContent("2015");
+		Element age2 = document.createElement("age");
+		age2.setTextContent(45 + "");
+		book2.appendChild(age2);
+		Element address2 = document.createElement("address");
+		address2.setTextContent("深圳市宝安区");
+		book2.appendChild(address2);
 		// 创建TransformerFactory对象
 		TransformerFactory tff = TransformerFactory.newInstance();
 		try {
 			// 创建Transformer对象
 			Transformer tf = tff.newTransformer();
 			tf.setOutputProperty(OutputKeys.INDENT, "yes");
-			tf.transform(new DOMSource(document), new StreamResult(new File("books1.xml")));
+			tf.transform(new DOMSource(document), new StreamResult(new File("books1forupdate.xml")));
 		} catch (TransformerConfigurationException e) {
 			e.printStackTrace();
 		} catch (TransformerException e) {

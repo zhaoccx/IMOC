@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookStore>
+	<book id="1">
+		<name>小王子</name>
+		<year>2015</year>
+		<age>45</age>
+		<address>深圳市宝安区</address>
+	</book>
+	<book id="2">
+		<name>小王子</name>
+		<year>2015</year>
+		<age>45</age>
+		<address>深圳市宝安区</address>
+	</book>
+</bookStore>
