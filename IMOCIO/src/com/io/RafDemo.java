@@ -22,7 +22,7 @@ public class RafDemo {
 		raf.write('A');// 只写了一个字节
 		System.out.println(raf.getFilePointer());
 		raf.write('B');
-		int i = 0x7fffffff;
+		int i = 0xefffffff;
 		// 用write方法每次只能写一个字节，如果要把i写进去就得写4次
 		raf.write(i >>> 24);// 高8位
 		raf.write(i >>> 16);
