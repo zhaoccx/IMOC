@@ -11,9 +11,10 @@ import java.net.Socket;
  */
 public class Server {
 	public static void main(String[] args) {
+		ServerSocket serverSocket = null;
 		try {
 			// 1.创建一个服务器端Socket，即ServerSocket，指定绑定的端口，并监听此端口
-			ServerSocket serverSocket = new ServerSocket(8888);
+			serverSocket = new ServerSocket(8888);
 			Socket socket = null;
 			// 记录客户端的数量
 			int count = 0;
