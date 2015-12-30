@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 
 public class MethodDemo2 {
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		UserService us = new UserService();
 		/*

@@ -1,6 +1,7 @@
 package com.im.ref;
 
 public class ClassDemo2 {
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		Class c1 = int.class;// int 的类类型
 		Class c2 = String.class;// String类的类类型 String类字节码（自己发明的)

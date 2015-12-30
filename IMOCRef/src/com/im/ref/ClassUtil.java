@@ -66,6 +66,7 @@ public class ClassUtil {
 	 * 
 	 * @param obj
 	 */
+	@SuppressWarnings("rawtypes")
 	public static void printConMessage(Object obj) {
 		Class c = obj.getClass();
 		/*

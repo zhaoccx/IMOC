@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class MethodDemo4 {
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		ArrayList list = new ArrayList();
 		ArrayList<String> list1 = new ArrayList<String>();

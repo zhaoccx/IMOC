@@ -17,6 +17,7 @@ public class ClassDemo1 {
 		// 不管c1 or c2都代表了Foo类的类类型，一个类只可能是Class类的一个实例对象
 		System.out.println(c1 == c2);
 		// 第三种表达方式
+		@SuppressWarnings("rawtypes")
 		Class c3 = null;
 		try {
 			c3 = Class.forName("com.imooc.reflect.Foo");
