@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	import="java.util.*" pageEncoding="UTF-8"%>
+	import="java.util.*,java.text.SimpleDateFormat" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,12 +25,17 @@
 		这是注释啊
 		*/
 		out.println("欢迎大家来学习！！！JavaEE");
+		out.println("欢迎大家来学习！！！JavaEE");
+		out.println("欢迎大家来学习！！！JavaEE");
 	%>
 	<%
 		out.println(adds(1,2));
-		
+		SimpleDateFormat sFormat = new SimpleDateFormat("yyyy年MM月dd日");
+		String data = sFormat.format(new Date());
 	%>
 	<%=s %>
 	<%=adds(4, 5) %>
+	<%= data %>
+	
 </body>
 </html>
