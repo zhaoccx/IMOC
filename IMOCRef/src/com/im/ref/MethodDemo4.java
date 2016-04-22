@@ -2,11 +2,12 @@ package com.im.ref;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MethodDemo4 {
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
-		ArrayList list = new ArrayList();
+		List<Integer> list = new ArrayList<Integer>();
 		ArrayList<String> list1 = new ArrayList<String>();
 		list1.add("hello");
 		// list1.add(20);错误的

@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 
 public class MethodDemo2 {
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		UserService us = new UserService();
 		/*
@@ -23,7 +22,7 @@ public class MethodDemo2 {
 			/*
 			 * action就是方法名称， 都没有参数--->通过方法的反射操作就会简单很多 通过方法对象然后进行反射操作
 			 */
-			Class c = us.getClass();
+			Class<? extends UserService> c = us.getClass();
 			Method m = c.getMethod(action);
 			m.invoke(us);
 		} catch (Exception e) {

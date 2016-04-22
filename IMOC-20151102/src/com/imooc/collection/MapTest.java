@@ -6,11 +6,12 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
+@SuppressWarnings("resource")
 public class MapTest {
 	/**
 	 * 用来承装学生类型对象
 	 */
-	public Map<String, Student>	students;
+	public Map<String, Student> students;
 
 	/**
 	 * 在构造器中初始化students属性

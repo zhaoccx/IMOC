@@ -6,6 +6,7 @@ public class Initail {
 	 * 
 	 * @param args
 	 */
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Dog dog = new Dog();
 		dog.eat();

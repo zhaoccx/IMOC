@@ -29,7 +29,7 @@ public class TestAnno {
 					Column column = field.getAnnotation(Column.class);
 					if (object instanceof String && null != object) {
 						buffer.append("and ").append(column.value().toLowerCase()).append(" like '%").append(object).append("%' ");
-					} else if (object instanceof Integer && 0 != (int) object) {
+					} else if (object instanceof Integer && 0 != (Integer) object) {
 						buffer.append("and ").append(column.value().toLowerCase()).append(" = ").append(object).append(" ");
 					}
 				} catch (NoSuchMethodException e) {

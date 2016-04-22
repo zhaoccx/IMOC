@@ -3,7 +3,7 @@ package com.im.ref;
 import java.lang.reflect.Method;
 
 public class MethodDemo1 {
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 	public static void main(String[] args) {
 		// 要获取print(int ,int )方法 1.要获取一个方法就是获取类的信息，获取类的信息首先要获取类的类类型
 		A a1 = new A();

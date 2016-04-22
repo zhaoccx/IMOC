@@ -9,15 +9,15 @@ import org.xml.sax.helpers.DefaultHandler;
 import com.imooc.parsexml.par.imooc.entity.Book;
 
 public class SAXParserHandler extends DefaultHandler {
-	String					value		= null;
-	Book					book		= null;
-	private ArrayList<Book>	bookList	= new ArrayList<Book>();
+	String value = null;
+	Book book = null;
+	private ArrayList<Book> bookList = new ArrayList<Book>();
 
 	public ArrayList<Book> getBookList() {
 		return bookList;
 	}
 
-	int	bookIndex	= 0;
+	int bookIndex = 0;
 
 	/**
 	 * 用来标识解析开始
@@ -38,6 +38,7 @@ public class SAXParserHandler extends DefaultHandler {
 	/**
 	 * 解析xml元素
 	 */
+	@SuppressWarnings("unused")
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, qName, attributes);

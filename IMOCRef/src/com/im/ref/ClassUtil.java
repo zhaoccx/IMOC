@@ -11,9 +11,10 @@ public class ClassUtil {
 	 * @param obj
 	 *            该对象所属类的信息
 	 */
+	@SuppressWarnings("rawtypes")
 	public static void printClassMethodMessage(Object obj) {
 		// 要获取类的信息 首先要获取类的类类型
-		Class c = obj.getClass();// 传递的是哪个子类的对象 c就是该子类的类类型
+		Class<? extends Object> c = obj.getClass();// 传递的是哪个子类的对象 c就是该子类的类类型
 		// 获取类的名称
 		System.out.println("类的名称是:" + c.getName());
 		/*
@@ -24,7 +25,7 @@ public class ClassUtil {
 		Method[] ms = c.getMethods();// c.getDeclaredMethods()
 		for (int i = 0; i < ms.length; i++) {
 			// 得到方法的返回值类型的类类型
-			Class returnType = ms[i].getReturnType();
+			Class<?> returnType = ms[i].getReturnType();
 			System.out.print(returnType.getName() + " ");
 			// 得到方法的名称
 			System.out.print(ms[i].getName() + "(");
@@ -42,8 +43,9 @@ public class ClassUtil {
 	 * 
 	 * @param obj
 	 */
+	@SuppressWarnings("rawtypes")
 	public static void printFieldMessage(Object obj) {
-		Class c = obj.getClass();
+		Class<? extends Object> c = obj.getClass();
 		/*
 		 * 成员变量也是对象 java.lang.reflect.Field Field类封装了关于成员变量的操作
 		 * getFields()方法获取的是所有的public的成员变量的信息
@@ -68,7 +70,7 @@ public class ClassUtil {
 	 */
 	@SuppressWarnings("rawtypes")
 	public static void printConMessage(Object obj) {
-		Class c = obj.getClass();
+		Class<? extends Object> c = obj.getClass();
 		/*
 		 * 构造函数也是对象 java.lang. Constructor中封装了构造函数的信息
 		 * getConstructors获取所有的public的构造函数 getDeclaredConstructors得到所有的构造函数

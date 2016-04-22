@@ -10,7 +10,7 @@ public class MapTest {
 	/**
 	 * 用来承装学生类型对象
 	 */
-	public Map<String, Student>	students;
+	public Map<String, Student> students;
 
 	/**
 	 * 在构造器中初始化students属性
@@ -22,6 +22,7 @@ public class MapTest {
 	/**
 	 * 测试添加：输入学生ID，判断是否被占用 若未被占用，则输入姓名，创建新学生对象，并且 添加到students中
 	 */
+	@SuppressWarnings("resource")
 	public void testPut() {
 		// 创建一个Scanner对象，用来获取输入的学生ID和姓名
 		Scanner console = new Scanner(System.in);
@@ -67,6 +68,7 @@ public class MapTest {
 	/**
 	 * 测试删除Map中的映射
 	 */
+	@SuppressWarnings("resource")
 	public void testRemove() {
 		// 获取从键盘输入的待删除学生ID字符串
 		Scanner console = new Scanner(System.in);
@@ -102,6 +104,7 @@ public class MapTest {
 	/**
 	 * 利用put方法修改Map中的已有映射
 	 */
+	@SuppressWarnings("resource")
 	public void testModify() {
 		// 提示输入要修改的学生ID
 		System.out.println("请输入要修改的学生ID：");

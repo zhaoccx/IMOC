@@ -5,10 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 public class SetTest {
-	public List<Course>	coursesToSelect;
-	private Scanner		console;
-	public Student		student;
+	public List<Course> coursesToSelect;
+	private Scanner console;
+	public Student student;
 
 	public SetTest() {
 		coursesToSelect = new ArrayList<Course>();
@@ -23,11 +24,11 @@ public class SetTest {
 		Course cr1 = new Course("1", "数据结构");
 		coursesToSelect.add(cr1);
 		Course temp = coursesToSelect.get(0);
-		// System.out.println("添加了课程：" + temp.id + ":" + temp.name);
+		System.out.println("添加了课程：" + temp.id + ":" + temp.name);
 		Course cr2 = new Course("2", "C语言");
 		coursesToSelect.add(0, cr2);
 		Course temp2 = coursesToSelect.get(0);
-		// System.out.println("添加了课程：" + temp2.id + ":" + temp2.name);
+		System.out.println("添加了课程：" + temp2.id + ":" + temp2.name);
 		// coursesToSelect.add(cr1);
 		// Course temp0 = (Course) coursesToSelect.get(2);
 		// System.out.println("添加了课程：" + temp.id + ":" + temp.name);
@@ -38,12 +39,11 @@ public class SetTest {
 		coursesToSelect.addAll(Arrays.asList(course));
 		Course temp3 = coursesToSelect.get(2);
 		Course temp4 = coursesToSelect.get(3);
-		// System.out.println("添加了两门课程：" + temp3.id + ":" +
-		// temp3.name + ";" + temp4.id + ":" + temp4.name);
+		System.out.println("添加了两门课程：" + temp3.id + ":" + temp3.name + ";" + temp4.id + ":" + temp4.name);
 		Course[] course2 = { new Course("5", "高等数学"), new Course("6", "大学英语") };
 		coursesToSelect.addAll(2, Arrays.asList(course2));
-		Course temp5 = coursesToSelect.get(2);
-		Course temp6 = coursesToSelect.get(3);
+		// Course temp5 = coursesToSelect.get(2);
+		// Course temp6 = coursesToSelect.get(3);
 		// System.out.println("添加了两门课程：" + temp5.id + ":" +
 		// temp5.name + ";" + temp6.id + ":" + temp6.name);
 	}

@@ -139,6 +139,7 @@ public class ParseTest {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public void dom4jXmlParser() {
 		ArrayList<Book> booksList = new ArrayList<Book>();
 		SAXReader reader = new SAXReader();

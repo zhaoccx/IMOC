@@ -1,5 +1,6 @@
 package com.imooc.test;
 
+@SuppressWarnings("serial")
 public class DrunkException extends Exception {
 	public DrunkException() {
 	}
