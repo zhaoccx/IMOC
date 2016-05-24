@@ -37,7 +37,7 @@ public class User implements HttpSessionBindingListener, HttpSessionActivationLi
 		this.password = password;
 	}
 
-	// �ۻ�
+	// dsfaldsaf
 	public void sessionWillPassivate(HttpSessionEvent httpsessionevent) {
 		System.out.println("sessionWillPassivate " + httpsessionevent.getSource());
 	}
