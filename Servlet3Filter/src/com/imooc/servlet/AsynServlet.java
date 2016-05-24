@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 public class AsynServlet extends HttpServlet {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3827117529238872621L;
+
+	/**
 	 * Constructor of the object.
 	 */
 	public AsynServlet() {
@@ -22,6 +27,7 @@ public class AsynServlet extends HttpServlet {
 	/**
 	 * Destruction of the servlet. <br>
 	 */
+	@Override
 	public void destroy() {
 		super.destroy(); // Just puts "destroy" string in log
 		// Put your code here
@@ -32,51 +38,64 @@ public class AsynServlet extends HttpServlet {
 	 *
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("ServletÖ´ÐÐ¿ªÊ¼Ê±¼ä:"+new Date());
-		AsyncContext context =  request.startAsync();
+		System.out.println("ServletÖ´ï¿½Ð¿ï¿½Ê¼Ê±ï¿½ï¿½:" + new Date());
+		AsyncContext context = request.startAsync();
 		new Thread(new Executor(context)).start();
-		System.out.println("ServletÖ´ÐÐ½áÊøÊ±¼ä:"+new Date());
+		System.out.println("ServletÖ´ï¿½Ð½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½:" + new Date());
 	}
 
-	public class Executor implements Runnable{
+	public class Executor implements Runnable {
+		@SuppressWarnings("unused")
 		private AsyncContext context;
-		public Executor(AsyncContext context ) {
+
+		public Executor(AsyncContext context) {
 			this.context = context;
 		}
-		
+
 		@Override
 		public void run() {
-			//Ö´ÐÐÏà¹Ø¸´ÔÓÒµÎñ
+			// Ö´ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Òµï¿½ï¿½
 			try {
-				Thread.sleep(1000*10);
-//				context.getRequest();
-//				context.getResponse();
-				System.out.println("ÒµÎñÖ´ÐÐÍê³ÉÊ±¼ä:"+new Date());
+				Thread.sleep(1000 * 10);
+				// context.getRequest();
+				// context.getResponse();
+				System.out.println("Òµï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½:" + new Date());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
+
 		}
-		
+
 	}
-	
+
 	/**
 	 * The doPost method of the servlet. <br>
 	 *
-	 * This method is called when a form has its tag value method equals to post.
+	 * This method is called when a form has its tag value method equals to
+	 * post.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html");
@@ -97,8 +116,10 @@ public class AsynServlet extends HttpServlet {
 	/**
 	 * Initialization of the servlet. <br>
 	 *
-	 * @throws ServletException if an error occurs
+	 * @throws ServletException
+	 *             if an error occurs
 	 */
+	@Override
 	public void init() throws ServletException {
 		// Put your code here
 	}

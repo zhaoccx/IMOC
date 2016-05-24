@@ -42,7 +42,7 @@ public class User implements HttpSessionBindingListener, HttpSessionActivationLi
 		System.out.println("sessionWillPassivate " + httpsessionevent.getSource());
 	}
 
-	// dsa
+	// dsa什么什么情况 呢？this is a test
 	public void sessionDidActivate(HttpSessionEvent httpsessionevent) {
 		System.out.println("sessionDidActivate " + httpsessionevent.getSource());
 	}
