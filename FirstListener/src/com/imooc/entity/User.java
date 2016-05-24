@@ -7,17 +7,21 @@ import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
 import javax.servlet.http.HttpSessionEvent;
 
-public class User implements HttpSessionBindingListener,HttpSessionActivationListener,Serializable {
+public class User implements HttpSessionBindingListener, HttpSessionActivationListener, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
-	
+
 	public void valueBound(HttpSessionBindingEvent httpsessionbindingevent) {
-		System.out.println("valueBound Name:"+httpsessionbindingevent.getName());
+		System.out.println("valueBound Name:" + httpsessionbindingevent.getName());
 	}
 
 	public void valueUnbound(HttpSessionBindingEvent httpsessionbindingevent) {
-		System.out.println("valueUnbound Name:"+httpsessionbindingevent.getName());
+		System.out.println("valueUnbound Name:" + httpsessionbindingevent.getName());
 	}
 
 	public String getUsername() {
@@ -36,13 +40,14 @@ public class User implements HttpSessionBindingListener,HttpSessionActivationLis
 		this.password = password;
 	}
 
-	//¶Û»¯
+	// ï¿½Û»ï¿½
 	public void sessionWillPassivate(HttpSessionEvent httpsessionevent) {
-		System.out.println("sessionWillPassivate "+httpsessionevent.getSource());
+		System.out.println("sessionWillPassivate " + httpsessionevent.getSource());
 	}
-	//»î»¯
+
+	// ï¿½î»¯
 	public void sessionDidActivate(HttpSessionEvent httpsessionevent) {
-		System.out.println("sessionDidActivate "+httpsessionevent.getSource());
+		System.out.println("sessionDidActivate " + httpsessionevent.getSource());
 	}
 
 }
