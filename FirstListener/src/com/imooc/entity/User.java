@@ -9,9 +9,6 @@ import javax.servlet.http.HttpSessionEvent;
 
 public class User implements HttpSessionBindingListener, HttpSessionActivationListener, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
