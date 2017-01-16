@@ -18,9 +18,7 @@ public class ClassUtil {
 		// 获取类的名称
 		System.out.println("类的名称是:" + c.getName());
 		/*
-		 * Method类，方法对象 一个成员方法就是一个Method对象
-		 * getMethods()方法获取的是所有的public的函数，包括父类继承而来的
-		 * getDeclaredMethods()获取的是所有该类自己声明的方法，不问访问权限
+		 * Method类，方法对象 一个成员方法就是一个Method对象 getMethods()方法获取的是所有的public的函数，包括父类继承而来的 getDeclaredMethods()获取的是所有该类自己声明的方法，不问访问权限
 		 */
 		Method[] ms = c.getMethods();// c.getDeclaredMethods()
 		for (int i = 0; i < ms.length; i++) {
@@ -47,9 +45,7 @@ public class ClassUtil {
 	public static void printFieldMessage(Object obj) {
 		Class<? extends Object> c = obj.getClass();
 		/*
-		 * 成员变量也是对象 java.lang.reflect.Field Field类封装了关于成员变量的操作
-		 * getFields()方法获取的是所有的public的成员变量的信息
-		 * getDeclaredFields获取的是该类自己声明的成员变量的信息
+		 * 成员变量也是对象 java.lang.reflect.Field Field类封装了关于成员变量的操作 getFields()方法获取的是所有的public的成员变量的信息 getDeclaredFields获取的是该类自己声明的成员变量的信息
 		 */
 		// Field[] fs = c.getFields();
 		Field[] fs = c.getDeclaredFields();
@@ -72,8 +68,7 @@ public class ClassUtil {
 	public static void printConMessage(Object obj) {
 		Class<? extends Object> c = obj.getClass();
 		/*
-		 * 构造函数也是对象 java.lang. Constructor中封装了构造函数的信息
-		 * getConstructors获取所有的public的构造函数 getDeclaredConstructors得到所有的构造函数
+		 * 构造函数也是对象 java.lang. Constructor中封装了构造函数的信息 getConstructors获取所有的public的构造函数 getDeclaredConstructors得到所有的构造函数
 		 */
 		// Constructor[] cs = c.getConstructors();
 		Constructor[] cs = c.getDeclaredConstructors();
@@ -87,4 +82,5 @@ public class ClassUtil {
 			System.out.println(")");
 		}
 	}
+
 }
